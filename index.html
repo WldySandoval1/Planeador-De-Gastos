@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@500&family=Montserrat+Alternates:wght@200;300&display=swap"
+        rel="stylesheet">
+    <title>Planeador de gastos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="inputs.css">
+
+</head>
+
+<body>
+    <main>
+        <div class="caja_igresos">
+            <img class="logo" src="img/logoPlaneador.svg" alt="">
+            <h1 class="titulo">Planeador de gastos</h1>
+
+            <form action="">
+                
+                <div class="input-container">
+                    <input class="input" type="number" placeholder="Ingrese la cantidad a gestionar" name=""
+                        id="presupuesto" required="" oninvalid="this.setCustomValidity('Por favor ingresa un dato!')"
+                        data-tipo="numero" 
+                        data-maxlength="9" oninput="this.value=this.value.slice(0,this.dataset.maxlength)">
+                    <label class="input-label" for="phoneNumber">Ingrese la cantidad a gestionar</label>
+                    <span class="input-message-error">Este campo no es valido</span>
+                </div>
+
+                <div class="input-container">
+                    <input class="input" type="number" placeholder="Para cuántos días es tu presupuesto" name=""
+                        id="dias" required="" oninvalid="this.setCustomValidity('Por favor ingresa un dato!')"
+                        data-tipo="numero" 
+                        data-maxlength="3" oninput="this.value=this.value.slice(0,this.dataset.maxlength)">
+                    <label class="input-label" for="phoneNumber">Para cuántos días es tu presupuesto</label>
+                    <span class="input-message-error">Este campo no es valido</span>
+                </div>
+
+                <div class="input-container">
+                    <input class="input" type="number" placeholder="Gasto diario en alimentos" name="" id="alimentos"
+                        required="" oninvalid="this.setCustomValidity('Por favor ingresa un dato!')" data-tipo="numero"
+                        data-maxlength="9" oninput="this.value=this.value.slice(0,this.dataset.maxlength)">
+                    <label class="input-label" for="phoneNumber">Gasto diario en alimentos</label>
+                    <span class="input-message-error">Este campo no es valido</span>
+                </div>
+
+                <div class="input-container">
+                    <input class="input" type="number" placeholder="Gasto diario en transporte" name="" id="transporte"
+                        required="" oninvalid="this.setCustomValidity('Por favor ingresa un dato!')" data-tipo="numero"
+                        data-maxlength="9" oninput="this.value=this.value.slice(0,this.dataset.maxlength)">
+                    <label class="input-label" for="phoneNumber">Gasto diario en transporte</label>
+                    <span class="input-message-error">Este campo no es valido</span>
+                </div>
+                <!-- <button id="calcular" onclick="cargarDatos()" type="button" class="btn_calcular">Calcular</button> -->
+                <a id="calcular" onclick="cargarDatos()" type="button" class="btn_calcular" href="#elCalculo">
+                    <p>Calcular</p>
+                </a>
+            </form>
+        </div>
+        <section id="elCalculo">
+            <div id="resulta" class="seccion-calculo-diagrama">
+                <div class="contaienerResultado">
+                    <img class="logo-diagrama" src="img/logoPlaneador.svg" alt="">
+
+                    <section>
+                        <figure class="centrandoDiasDiagrama">
+                            <div class="container_los_dias">
+                                <p id="losDias" class="los_dias">0</p>
+                                <p id="diaTex" class="los_dias_tex">Dias</p>
+                            </div>
+                            <canvas id="modelsChart"></canvas>
+                        </figure>
+                    </section>
+
+                    <div class="ancho_caja">
+                        <div class="presupuesto_-saldo">
+                            <h3 class="elPresupuesto">$ <span id="elPresupuesto"></span></h3>
+                            <h3 class="elSaldo">$ <span id="elSaldo"></span></h3>
+                        </div>
+                        <div class="containerValores">
+                            <div class="punto-alimento"></div>
+                            <p>Alimentos: </p>
+                            <p>$ <span id="comidita"></span> </p>
+                        </div>
+                        <div class="containerValores">
+                            <div class="punto-transporte"></div>
+                            <p>Transporte:</p>
+                            <p>$ <span id="transporting"></span> </p>
+                        </div>
+                        <div class="containerValores">
+                            <div class="punto-disponible"></div>
+                            <p>Disponible:</p>
+                            <p>$ <span id="salDisponible"></span> </p>
+                        </div>
+                        <p class="textoInfo">Diariamente puesdes tener un gasto adicional de</p>
+                        <p class="texto_saldoDiario">$ <span id="elSaldoDiarion"></span></p>
+                    </div>
+                    <a id="ahorro" onclick="cargarDatosResultado()" type="button" class="btn_ahorrar" href="#sec_ahorro">
+                        <p>¿Quieres ahorrar?</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section >
+            <div id="sec_ahorro" class="contaienerResultado_final_uno">
+                <img class="logo-diagrama_ahorro" src="img/logoPlaneador.svg" alt="">
+                <p class="textoInfo_ahorro">Tu valor disponible  para usar diariamente es</p>
+                <p class="texto_ahorro">$ <span id="elSaldoDiarioResultado"></span></p>
+
+                <div class="input-container">
+                    <input class="input" type="number" placeholder="Cuanto quieres ahorrar por dia" name="" id="ahorroDia"
+                        required="" oninvalid="this.setCustomValidity('Por favor ingresa un dato!')" data-tipo="numero" 
+                        data-maxlength="9" oninput="this.value=this.value.slice(0,this.dataset.maxlength)">
+                    <label class="input-label" for="phoneNumber">Cuanto quieres ahorrar por dia</label>
+                    <span class="input-message-error">Este campo no es valido</span>
+                </div>
+                <a id="calculo_ahorro" onclick="operacionesCalculo()" type="button" class="btn_ahorrar_calculo" href="#ahorrFinal"><p>Calcular</p></a>
+            </div>
+        </section>
+        <section>
+            <div id="ahorrFinal" class="contaienerResultado_final">
+                <p class="textoInfo_ahorro">Tu nuevo valor disponible para usar diariamente es</p>
+                <p class="texto_ahorro">$ <span id="elNuevoValor">0</span></p>
+                <p class="textoInfo_ahorro">Al finalizar tu ahorro sera de</p>
+                <p class="texto_ahorro">$ <span id="ahorroTotal">0</span></p>
+                <p class="textoInfo_ahorro">Si sigues asi tu ahorro en un mes puede ser de</p>
+                <p class="texto_ahorro">$ <span id="ahorroMensual">0</span></p>
+                <a id="volver_empezar" onclick="" type="button" class="btn_empezar_denuevo"><p>Empezar de nuevo</p></a>               
+            </div>
+        </section>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+
+    <script type="module" src="js/app.js"></script>
+    <script src="js/operaciones.js"></script>
+    <script src="js/resultado_ahorro.js"></script>
+    <script src="js/recargarPagina.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,270 @@
+body {
+    background: rgb(252, 88, 36);
+    background: linear-gradient(0deg, #FC5824E8 -10%, #5910F2 50%);
+    height: 100%;
+    width: 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.caja_igresos {
+    margin: 100px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.logo {
+    width: 3.5rem;
+    margin: 2rem;
+}
+
+.titulo {
+    color: white;
+    padding-bottom: 1rem;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 900;
+    font-size: 25px;
+    margin-bottom: 2rem;
+
+}
+
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%; 
+}
+.btn_calcular {
+    margin-top: 1rem;
+    width: 200px;
+    height: 50px;
+    background-color: #6925C1;
+    color: white;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 900;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px #481a84;
+}
+.btn_ahorrar{
+    margin-top: 1rem;
+    width: 200px;
+    height: 50px;
+    background-color: #6925C1;
+    color: white;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 900;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px #481a84;
+    margin-bottom: 3rem;
+
+}
+.btn_ahorrar_calculo{
+    width: 200px;
+    height: 40px;
+    background-color: #6925C1;
+    color: white;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 900;
+    font-size: 15px;
+    padding: 0 0 6px 0;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px #481a84;
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+    cursor: pointer;
+
+}
+.btn_empezar_denuevo{
+    width: 200px;
+    height: 40px;
+    background-color: #6925C1;
+    color: white;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 900;
+    font-size: 15px;
+    padding: 0 0 6px 0;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px #481a84;
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+    cursor: pointer;
+}
+a{
+    text-align: center;
+    text-decoration: none;
+}
+.seccion-calculo-diagrama{
+    display: none;
+}
+.contaienerResultado{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 80%;
+    
+}
+.ancho_caja{
+    width: 100%;
+
+}
+p{
+    color: white;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 900;
+
+}
+.containerValores{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.punto-alimento{
+    padding: 0;
+    background: #EBA207;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+}
+.punto-transporte{
+    padding: 0;
+    background: #00B9FF;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+}
+.punto-disponible{
+    padding: 0;
+    background: #08CC00;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+}
+.logo-diagrama{
+    width: 3.5rem;
+    margin: 4rem 0 1rem 0;
+
+}
+.presupuesto_-saldo{
+    margin: 15px auto;
+    text-align: center;
+}
+.elPresupuesto{
+    color: #ff0000;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 18px;
+}
+.elSaldo{
+    color: #08CC00;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 23px;
+}
+.textoInfo{
+    margin: 1rem 0 1rem 0;
+    text-align: center;
+    font-weight: 400;
+    font-size: 18px;
+}
+.texto_saldoDiario{
+    text-align: center;
+    font-weight: 400;
+    font-size: 23px;
+    color: #08CC00;
+
+}
+.centrandoDiasDiagrama{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container_los_dias{
+    position: absolute;
+    margin-top: -10px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    
+}
+.los_dias{
+    font-size: 40px;
+    margin: 20px 0 0 0;
+}
+.los_dias_tex{
+    position: relative;
+    margin: 0;
+
+
+}
+figure, canvas {
+    padding: 10px 10px 10px;
+    width: 200px;
+}
+
+canvas {
+}
+.logo-diagrama_ahorro{
+    width: 3.5rem;
+    margin: 2rem 0 1rem 0;
+
+}
+.textoInfo_ahorro{
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    margin: 5px;
+}
+.texto_ahorro{
+    margin: 15px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 18px;
+    color: #08CC00;
+}
+.contaienerResultado_final_uno{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 25rem;
+    margin: 0 auto 30px;
+    width: 80%;
+    background-color:rgba(255, 255, 255, 0.1);
+    border-radius: 20px 20px 20px 20px;
+
+}
+.contaienerResultado_final{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 80%;
+    background-color:rgba(255, 255, 255, 0.1);
+    border-radius: 0 0 20px 20px;
+    margin-bottom: 30px;
+
+}
+.contaienerResultado_final_uno{
+    display: none;
+}
+.contaienerResultado_final{
+      display: none; 
+}
+
+@media screen and (max-height:850px) and (max-width:430px){
+    .caja_igresos{
+        margin: 20px 0;
+    }
+    .titulo{
+        margin-bottom: 1rem;
+    }
+}
